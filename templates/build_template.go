@@ -615,6 +615,7 @@ setup_env() {
 
   # setup build dir
   mkdir -p "$BUILD_DIR"
+  mkdir -p "$BUILD_DIR/vendor/opengapps/build/core"
 
   # install required packages
   sudo apt-get update
