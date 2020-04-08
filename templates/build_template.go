@@ -786,6 +786,7 @@ aosp_repo_sync() {
   for i in {1..10}; do
     repo sync -c --no-tags --no-clone-bundle --jobs 32 && break
   done
+  
   for i in {1..10}; do
     repo forall -c git lfs pull && break
   done
