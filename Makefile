@@ -111,7 +111,7 @@ build:
 
 build-all:
 	mkdir -v -p $(CURDIR)/artifacts/$(VERSION)
-	gox -verbose -ldflags "-X github.com/dan-v/rattlesnakeos-stack/cli.version=$(VERSION)" \
+	~/go/bin/gox -verbose -ldflags "-X github.com/dan-v/rattlesnakeos-stack/cli.version=$(VERSION)" \
 	    -os "$(OS)" -arch "$(ARCH)" \
 	    -output "$(CURDIR)/artifacts/$(VERSION)/{{.OS}}/$(TARGET)" .
 	cp -v -f \
