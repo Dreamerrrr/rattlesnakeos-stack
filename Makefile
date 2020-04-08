@@ -98,7 +98,7 @@ vet:
 	go vet -v ./...
 
 lint:
-	golint $(go list ./... | grep -v /vendor/)
+	~/go/bin/golint $(go list ./... | grep -v /vendor/)
 
 fmt:
 	go fmt ./...
