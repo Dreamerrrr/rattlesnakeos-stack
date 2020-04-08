@@ -619,6 +619,10 @@ setup_env() {
   sudo apt-get update
   sudo DEBIAN_FRONTEND=noninteractive apt-get -y install repo gperf jq openjdk-8-jdk git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip python-networkx liblz4-tool pxz
   sudo DEBIAN_FRONTEND=noninteractive apt-get -y build-dep "linux-image-$(uname --kernel-release)"
+  
+  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  sudo DEBIAN_FRONTEND=noninteractive apt-get -y install git-lfs
+  git lfs install
 
   # temporary workaround as java 11 is default version and not compatible with sdkmanager
   sudo update-java-alternatives --jre-headless --jre --set java-1.8.0-openjdk-amd64 || true
@@ -779,6 +783,9 @@ aosp_repo_sync() {
   # sync with retries
   for i in {1..10}; do
     repo sync -c --no-tags --no-clone-bundle --jobs 32 && break
+  done
+  for i in {1..10}; do
+    repo forall -c git lfs pull && break
   done
 }
 
