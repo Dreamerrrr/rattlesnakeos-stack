@@ -1152,15 +1152,15 @@ add_magisk(){
   unzip -d magisk-latest magisk-latest.zip 
 
   # Move the original init binary to the place where Magisk expects it to be
-  mkdir -p $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/.backup
-  cp -an $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/{init,.backup/init}
-  rm -f $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/init
+  mkdir -p $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/system/bin/.backup
+  cp -an $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/system/bin/{init,.backup/init}
+  rm -f $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/system/bin/init
 
   # Copy the downloaded magiskinit binary to the place of the original init binary
-  cp magisk-latest/arm/magiskinit64 $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/init
+  cp magisk-latest/arm/magiskinit64 $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/system/bin/init
 
   # Create Magisk config file. We keep dm-verity and encryptiong.
-  cat <<EOF > $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/.backup/.magisk
+  cat <<EOF > $BUILD_DIR/out/target/product/$DEVICE/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-$BUILD_NUMBER/BOOT/RAMDISK/system/bin/.backup/.magisk
 KEEPFORCEENCRYPT=true
 KEEPVERITY=true
 RECOVERYMODE=false
