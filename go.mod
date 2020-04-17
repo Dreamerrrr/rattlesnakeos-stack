@@ -19,7 +19,7 @@ require (
 	github.com/lunixbochs/vtclean v0.0.0-20180621232353-2d01aacdc34a
 	github.com/magiconair/properties v1.8.0
 	github.com/manifoldco/promptui v0.3.2
-	github.com/matm/gocov-html v0.0.0-20160206185555-f6dd0fd0ebc7 // indirect
+	github.com/matm/gocov-html v0.0.0-20191111163307-9ee104d84c82 // indirect
 	github.com/mattn/go-colorable v0.0.9
 	github.com/mattn/go-isatty v0.0.4
 	github.com/mitchellh/go-homedir v1.1.0
@@ -31,11 +31,12 @@ require (
 	github.com/spf13/pflag v1.0.3
 	github.com/spf13/viper v1.4.0
 	github.com/stretchr/testify v1.2.2
-	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
-	golang.org/x/lint v0.0.0-20190409202823-959b441ac422 // indirect
+	github.com/tools/godep v0.0.0-20180126220526-ce0bfadeb516 // indirect
+	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
+	golang.org/x/lint v0.0.0-20200302205851-738671d3881b // indirect
 	golang.org/x/sys v0.0.0-20190422165155-953cdadca894
 	golang.org/x/text v0.3.0
-	golang.org/x/tools v0.0.0-20190617190820-da514acc4774
+	golang.org/x/tools v0.0.0-20200130002326-2f3ba24bd6e7
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	gopkg.in/yaml.v2 v2.2.2
