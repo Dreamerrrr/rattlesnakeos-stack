@@ -384,6 +384,7 @@ full_run() {
   fi
   add_chromium
   build_aosp
+  add_magisk
   release "${DEVICE}"
   aws_upload
   checkpoint_versions
